@@ -1,0 +1,22 @@
+<div class="video-container">
+  <div class="video-row" *ngFor="let row of videoRows">
+    <div class="video-box" *ngFor="let video of row" (click)="openVideoPlayer(video.id)">
+      <img [src]="video.thumbnail" alt="{{ video.title }}">
+      <div class="video-info">
+        <h3>{{ video.title }}</h3>
+        <p>{{ video.description }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+      <video controls [src]="video.src">
+        Your browser does not support the video tag.
+        <video controls preload="auto">
+          <source src="{{ video.src }}" type="video/mp4">
+          Your browser does not support the video tag.
+          <a href="javascript:void(0);" (click)="closeModal.emit()">&#8592; Back</a>
+        </video>
+      </video>
+   
+ 
+
